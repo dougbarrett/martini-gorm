@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Edit Item</title>
+</head>
+<body>
+	<form action="/item/save" method="post">
+		<label for="title">Title</label><br>
+		<input type="text" name="title" id="title" value="{{ .Item.Title }}"><br>
+		<br>
+		<label for="description">Description</label><br />
+		<textarea name="description" id="description">{{ .Item.Description }}</textarea><br />
+		<br />
+		<label for="user_name">User Name</label><br>
+		<input type="text" name="user_name" id="user_name" value="{{ .Item.UserName }}"><br>
+		<br>
+		<input type="hidden" name="id" value="{{ .Item.Id }}">
+		<input type="submit" value="Save">
+
+	</form>
+</body>
+</html>

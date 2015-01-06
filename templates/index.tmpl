@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>martini gorm example</title>
+</head>
+<body>
+	<a href="/item/add">Add Item</a>
+	<hr>
+	<h1>Items</h1>
+	{{ range .Items }}
+	<h3>{{ .Title }}</h3>
+	<p>{{ .Description }}</p>
+	<p>By: {{ .UserName }}</p>
+	<p><a href="/item/edit/{{ .Id }}">Edit</a> | <a href="/item/remove/{{ .Id }}">Remove</a></p>
+	{{ else }}
+	<p>No items found!</p>
+	{{ end }}
+</body>
+</html>
